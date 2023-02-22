@@ -1,0 +1,42 @@
+version: '3'
+services:
+  recipe-book-api:
+    build:
+      context: ./api
+    ports:
+      - "3080:3080"
+    container_name: recipe-book-api
+    depends_on:
+      - postgres
+    volumes:
+       - ./api:/usr/src/app/api
+       - /usr/src/app/api/node_modules
+  
+  recipe-book-ui:
+    build:
+      context: ./ui
+    ports:
+      - "3000:3000"
+    container_name: recipe-book-ui  
+    stdin_open: true
+    depends_on:      
+      - recipe-book-api
+    volumes:
+       - ./ui:/usr/src/app/ui
+       - /usr/src/app/ui/node_modules
+
+  postgres:
+      container_name: postgres
+      restart: always
+      image: postgres:latest        
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=password1234
+      ports:
+        - '5432:5432'
+      volumes: 
+        - postgres-db:/data/postgres
+volumes:
+  postgres-db:
+    driver: local
+

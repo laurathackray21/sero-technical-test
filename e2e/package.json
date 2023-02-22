@@ -1,0 +1,15 @@
+{
+  "name": "recipe-ui-e2e",
+  "version": "1.0.0",
+  "description": "The e2e tests for the recipe book",
+  "scripts": {
+    "e2e": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.6.0",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.0"
+  }
+}

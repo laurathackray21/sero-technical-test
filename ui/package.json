@@ -1,7 +1,8 @@
 {
-  "name": "ui",
+  "name": "recipe-book-ui",
+  "version": "1.0.0",
+  "description": "The UI for the Recipe Book",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

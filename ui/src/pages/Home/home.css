@@ -1,0 +1,14 @@
+.recipe-book-search {
+  display: flex;
+  padding: 1rem 15%;
+  gap: 2rem;
+}
+
+.recipe-book-create {
+  display: flex;
+  padding: 1rem 15%;
+}
+
+.card {
+  margin: 2rem 15%;
+}
